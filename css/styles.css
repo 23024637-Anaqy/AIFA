@@ -610,7 +610,7 @@ a:focus {
 
 .category-card p {
   color: var(--text-secondary);
-  margin-bottom: 0;
+  margin-bottom: var(--spacing-sm);
 }
 
 /* ===== AI ASSISTANT SECTION ===== */
