@@ -1,0 +1,79 @@
+{
+  "name": "fnb-business-website",
+  "version": "1.0.0",
+  "description": "F&Business - AI-powered F&B career platform with Flowise integration",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --host=localhost --open=/index.html",
+    "dev": "live-server --port=3000 --host=localhost --open=/index.html --watch=css,js",
+    "build": "npm run build:css && npm run build:js && npm run build:html",
+    "build:css": "postcss css/styles.css -o dist/styles.min.css --use autoprefixer cssnano",
+    "build:js": "terser js/app.js -o dist/app.min.js --compress --mangle",
+    "build:html": "html-minifier --input-dir . --output-dir dist --file-ext html --remove-comments --collapse-whitespace",
+    "test": "npm run test:html && npm run test:css && npm run test:js",
+    "test:html": "html-validate *.html",
+    "test:css": "stylelint css/*.css",
+    "test:js": "eslint js/*.js",
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
+    "lint": "npm run test",
+    "optimize:images": "imagemin images/* --out-dir=images/optimized --plugin=imagemin-webp --plugin=imagemin-mozjpeg --plugin=imagemin-pngquant",
+    "lighthouse": "lighthouse http://localhost:3000 --output=html --output-path=./reports/lighthouse-report.html",
+    "serve": "http-server . -p 3000 -o",
+    "deploy": "npm run build && npm run test && echo 'Ready for deployment'",
+    "clean": "rimraf dist reports node_modules/.cache"
+  },
+  "keywords": [
+    "food-beverage",
+    "jobs",
+    "careers",
+    "ai-assistant",
+    "flowise",
+    "restaurant",
+    "hospitality",
+    "employment"
+  ],
+  "author": "F&Business Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "prettier": "^3.0.0",
+    "eslint": "^8.45.0",
+    "stylelint": "^15.10.0",
+    "stylelint-config-standard": "^34.0.0",
+    "html-validate": "^8.2.0",
+    "html-minifier": "^4.0.0",
+    "postcss": "^8.4.27",
+    "postcss-cli": "^10.1.0",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "terser": "^5.19.2",
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^8.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "lighthouse": "^10.4.0",
+    "http-server": "^14.1.1",
+    "rimraf": "^5.0.1"
+  },
+  "dependencies": {
+    "flowise-embed": "^1.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/fnb-business-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/fnb-business-website/issues"
+  },
+  "homepage": "https://fnbusiness.com"
+}

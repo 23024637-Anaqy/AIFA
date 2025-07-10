@@ -1,0 +1,101 @@
+# F&Business Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs
+dist/
+build/
+coverage/
+reports/
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.vscode/.ropeproject/
+
+# Temporary folders
+tmp/
+temp/
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# IDE files
+.idea/
+.vscode/settings.json
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+
+# Image optimization outputs
+images/optimized/
+assets/optimized/
+
+# Testing
+.nyc_output/
+test-results/
+playwright-report/
+
+# Deployment
+deploy/
+.vercel/
+.netlify/
+
+# Flowise specific
+flowise-data/
+.flowise/
+
+# Local configuration
+config.local.js
+secrets.json
+
+# Analytics
+google-analytics.json
+analytics-data/

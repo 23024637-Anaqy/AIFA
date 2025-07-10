@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "ms-vscode.live-server",
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-eslint",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.vscode-typescript-next",
+    "ritwickdey.liveserver",
+    "htmlhint.vscode-htmlhint",
+    "stylelint.vscode-stylelint",
+    "ms-vscode.vscode-json",
+    "aaron-bond.better-comments",
+    "oderwat.indent-rainbow",
+    "ms-vscode.vscode-css-peek",
+    "zignd.html-css-class-completion"
+  ]
+}
