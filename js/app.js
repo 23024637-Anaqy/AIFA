@@ -2,9 +2,9 @@
 
 // Global configuration
 const CONFIG = {
-  // Flowise Configuration - Now Integrated!
+  // Flowise Configuration - ACTIVE!
   flowise: {
-    chatflowId: '2cebf570-9709-4e24-95f9-8d7e20f22c61', // Your actual chatflow ID
+    chatflowId: 'da3a650b-05ae-4c97-8d95-9f238ab37bd1', // Your actual chatflow ID
     apiHost: 'https://drkusanagi-flowise.hf.space', // Your Flowise instance
     status: 'active' // Integration is live!
   },
@@ -585,9 +585,32 @@ function showNotification(message, type = 'info') {
 
 // Chat toggle function for the floating chat button
 function toggleChat() {
-  // This will interact with the Flowise widget
+  // Check if Flowise is properly configured
+  if (CONFIG.flowise.status === 'disabled' || 
+      CONFIG.flowise.chatflowId === 'YOUR_CHATFLOW_ID_HERE' ||
+      CONFIG.flowise.apiHost === 'YOUR_FLOWISE_URL_HERE') {
+    
+    showNotification(
+      '🤖 AI Assistant Setup Required! Please check FLOWISE_SETUP.md for configuration instructions.', 
+      'warning'
+    );
+    return;
+  }
+  
+  // This will interact with the Flowise widget if properly configured
   const event = new CustomEvent('flowise-toggle');
   window.dispatchEvent(event);
+}
+
+// Function for hero button to open AI assistant
+function openAIAssistant() {
+  // Scroll to AI section first
+  scrollToSection('ai-assistant');
+  
+  // Then try to open the chat widget after a brief delay
+  setTimeout(() => {
+    toggleChat();
+  }, 500);
 }
 
 // ===== INITIALIZATION =====

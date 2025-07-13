@@ -1,5 +1,29 @@
 # 🤖 Flowise AI Integration Guide
 
+## ⚠️ TROUBLESHOOTING: Chatflow Not Found Error
+
+**If you're seeing this error:**
+```
+Error: chatflowsService.getChatflowById - Chatflow [ID] not found in the database!
+```
+
+**Quick Fix Options:**
+
+**Option 1: Use the website without AI (Immediate)**
+- The website works perfectly without the chatbot
+- The AI assistant section will show a setup message
+- Click the chat button to see setup instructions
+
+**Option 2: Set up your own Flowise (5-10 minutes)**
+- Follow the complete setup guide below
+- You'll have a fully functional AI assistant
+
+**Option 3: Use a different AI service**
+- Check `AI_ALTERNATIVES.md` for other options
+- Replace Flowise with ChatGPT API, Anthropic, etc.
+
+---
+
 ## Quick Setup (5 minutes)
 
 ### 1. Install Flowise
@@ -98,15 +122,24 @@ Assistant:
 - It looks like: `abc123def-456g-789h-ijkl-mnop012qrstu`
 
 ### 9. Update Your Website
-Replace the placeholder in your `index.html` (around line 378):
+
+**Step A:** Uncomment the Flowise script in `index.html` (around line 378):
+- Find the commented `<!-- <script type="module">` section
+- Remove the `<!--` and `-->` comments to enable it
+
+**Step B:** Replace the placeholders:
 
 ```javascript
-window.FlowiseConfig = {
-    chatflowId: 'your-actual-chatflow-id-here', // ← Replace this
-    apiHost: 'http://localhost:3000', // ← Your Flowise URL
-    theme: {
-        // ... existing theme config
-    }
+// In index.html, update these values:
+chatflowid: "your-actual-chatflow-id-here", // ← Replace with step 8 ID
+apiHost: "http://localhost:3000", // ← Your Flowise URL
+
+// In js/app.js, update CONFIG:
+flowise: {
+    chatflowId: 'your-actual-chatflow-id-here', // ← Same ID from step 8
+    apiHost: 'http://localhost:3000', // ← Your Flowise URL  
+    status: 'active' // ← Change from 'disabled' to 'active'
+}
 };
 ```
 
