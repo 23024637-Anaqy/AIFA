@@ -596,6 +596,14 @@ function toggleChat() {
     );
     return;
   }
+
+  // Check if we're on GitHub Pages and show CORS warning
+  if (window.location.hostname.includes('github.io')) {
+    showNotification(
+      '⚠️ AI Assistant may be unavailable due to CORS restrictions on GitHub Pages. Works locally!', 
+      'warning'
+    );
+  }
   
   // This will interact with the Flowise widget if properly configured
   const event = new CustomEvent('flowise-toggle');
