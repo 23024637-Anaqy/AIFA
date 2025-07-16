@@ -4,8 +4,8 @@
 const CONFIG = {
   // Flowise Configuration - ACTIVE!
   flowise: {
-    chatflowId: 'da3a650b-05ae-4c97-8d95-9f238ab37bd1', // Your actual chatflow ID
-    apiHost: 'https://drkusanagi-flowise.hf.space', // Your Flowise instance
+    chatflowId: 'b7f905e4-0f74-48c8-b210-937296cbb454', // Your actual chatflow ID
+    apiHost: 'https://cloud.flowiseai.com', // Your Flowise instance
     status: 'active' // Integration is live!
   },
   
